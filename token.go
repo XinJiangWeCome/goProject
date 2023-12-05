@@ -20,6 +20,8 @@ type JwtCustomClaims struct {
 func (j JwtCustomClaims) Valid() error {
 	return nil
 }
+
+// 生成token认证
 func GenerateToken(id int, name string) (string, error) {
 	iJwtCustomClaims := JwtCustomClaims{
 		ID:   id,
@@ -33,6 +35,8 @@ func GenerateToken(id int, name string) (string, error) {
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, iJwtCustomClaims)
 	return token.SignedString(stSignKey)
 }
+
+// 解析token认证
 func ParseToken(tokenStr string) (JwtCustomClaims, error) {
 	iJwtCustomClaims := JwtCustomClaims{}
 	token, err := jwt.ParseWithClaims(tokenStr, &iJwtCustomClaims, func(token *jwt.Token) (interface{}, error) {

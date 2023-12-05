@@ -7,7 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func main() {
+func postForm() {
 	r := gin.Default()
 	r.POST("/form", func(c *gin.Context) {
 		types := c.DefaultPostForm("type", "post")

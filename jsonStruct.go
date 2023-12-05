@@ -14,7 +14,7 @@ type user struct {
 	Age  int
 }
 
-func main() {
+func jsonStruct() {
 	r := gin.Default()
 	b := gin.H{"status": "登录成功"} //GIN.H就是将数据转换成map类型
 	// json的转换

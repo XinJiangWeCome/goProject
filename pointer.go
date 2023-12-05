@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func it() {
 	var num int = 100
 	var ptr *int
 	ptr = &num

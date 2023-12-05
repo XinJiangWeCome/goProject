@@ -7,7 +7,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func main() {
+func ginUrl() {
 	r := gin.Default()
 	r.GET("/user", func(c *gin.Context) {
 		name := c.DefaultQuery("name", "枯藤")
